@@ -6,7 +6,7 @@ other language's name)
 
 Types
 -----
-```
+```dimond
 "string"
 'string' # alternate string syntax
 /regex/
@@ -25,7 +25,7 @@ $variable
 
 Variable types
 --------------
-```
+```dimond
 $!lambda
 $%hash
 $@array
@@ -41,8 +41,8 @@ ${Object}anything
 Other reserved type prefixes: `'~[^$`
 
 
-Variable Naming
----------------
+Variables
+---------
 `/\$(<type>{\w+}|[^\w\s])?(<name>\w+)/`
 
 
@@ -103,10 +103,10 @@ Lists, arrays, hashes, and objects
 Argument Parsing
 ----------------
 `$` is a convenience object to be used in place of `$$~arguments`
-$~named    # named argument
-$['named'] # also valid
-$[0]       # unnamed argument
-$$         # object itself
+- `$~named    # named argument`
+- `$['named'] # also valid`
+- `$[0]       # unnamed argument`
+- `$$         # object itself`
 
 Examples:
 ```dimond
@@ -131,21 +131,21 @@ Newlines equate to semicolons
 Valid:
 
 ```dimond
-    if $var == 'foo' {
-    }
+if $var == 'foo' {
+}
 ```
 
 Invalid:
 
 ```dimond
-  if $var == 'foo'
-  {
-  }
+if $var == 'foo'
+{
+}
 
-  # translates to:
-  # if $var == 'foo';
-  # {
-  # }
+# translates to:
+# if $var == 'foo';
+# {
+# }
 ```
 
 
@@ -186,6 +186,7 @@ unless $var {
 
 XML type and templating
 -----------------------
+```dimond
 <>
   <ul>
     $foo~each({
@@ -193,17 +194,22 @@ XML type and templating
     })
   </ul>
 <>
+```
 
 Language extensions
 -------------------
+```dimond
 define name
 define operator name
 define unary operator name
 define binary operator name
 define ternary operator name1 name2
 define literal open close
+```
 
-
+Some misc things
+----------------
+```dimond
 if 2 in (1,2,3) {
   # foo
 } else {
@@ -225,3 +231,4 @@ while true {
 each $array {
   print "$~key: $~value"
 }
+```
