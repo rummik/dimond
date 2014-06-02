@@ -13,7 +13,7 @@ Types
 %regex%  # alternate regex syntax
 <>xml<>
 {lambda}
-(list)   # automatically detected as an array/hash/object
+(list)   # generic list
 @(array)
 %(hash)
 &(object)
