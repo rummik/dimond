@@ -1,6 +1,6 @@
 define if {
-	var $!body = $$~arguments[1]
-	var $cond = $$~arguments[0]
+	$!body = $$~arguments[1]
+	$cond = $$~arguments[0]
 
 	{
 		{ $#cond = $cond }
